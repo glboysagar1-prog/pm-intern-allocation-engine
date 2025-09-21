@@ -1,0 +1,137 @@
+{
+  "interns": [
+    {
+      "id": "int_001",
+      "name": "Jane Doe",
+      "skills": [
+        "Scrum",
+        "Jira",
+        "Stakeholder Management"
+      ],
+      "preferences": [
+        "Agile",
+        "Digital Transformation"
+      ],
+      "avatar_url": "/avatars/jane.jpg"
+    },
+    {
+      "id": "int_002",
+      "name": "John Smith",
+      "skills": [
+        "Python",
+        "SQL",
+        "Data Visualization"
+      ],
+      "preferences": [
+        "Data Science"
+      ],
+      "avatar_url": "/avatars/john.jpg"
+    },
+    {
+      "id": "int_003",
+      "name": "Alex Chen",
+      "skills": [
+        "Risk Analysis",
+        "Excel",
+        "Communication"
+      ],
+      "preferences": [
+        "Risk"
+      ],
+      "avatar_url": "/avatars/alex.jpg"
+    },
+    {
+      "id": "int_004",
+      "name": "Priya Kapoor",
+      "skills": [
+        "Python",
+        "Tableau",
+        "SQL"
+      ],
+      "preferences": [
+        "Data Science"
+      ],
+      "avatar_url": "/avatars/priya.jpg"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_001",
+      "name": "Digital Onboarding Revamp",
+      "domain": "Agile",
+      "required_skills": [
+        "Scrum",
+        "User Stories",
+        "Jira"
+      ],
+      "mentor_ids": [
+        "ment_001",
+        "ment_002"
+      ]
+    },
+    {
+      "id": "proj_002",
+      "name": "Supply Chain Analytics",
+      "domain": "Data Science",
+      "required_skills": [
+        "Python",
+        "SQL",
+        "Tableau"
+      ],
+      "mentor_ids": [
+        "ment_003"
+      ]
+    },
+    {
+      "id": "proj_003",
+      "name": "Compliance Risk Dashboard",
+      "domain": "Risk",
+      "required_skills": [
+        "Excel",
+        "Power BI",
+        "Risk Frameworks"
+      ],
+      "mentor_ids": [
+        "ment_004"
+      ]
+    }
+  ],
+  "mentors": [
+    {
+      "id": "ment_001",
+      "name": "Sarah Lin",
+      "expertise": [
+        "Agile",
+        "Scrum Master"
+      ],
+      "max_interns": 3
+    },
+    {
+      "id": "ment_002",
+      "name": "Diego Ruiz",
+      "expertise": [
+        "Product Management",
+        "Jira"
+      ],
+      "max_interns": 2
+    },
+    {
+      "id": "ment_003",
+      "name": "Raj Patel",
+      "expertise": [
+        "Data Engineering",
+        "Python"
+      ],
+      "max_interns": 2
+    },
+    {
+      "id": "ment_004",
+      "name": "Maria Gonzalez",
+      "expertise": [
+        "Risk Management",
+        "Compliance"
+      ],
+      "max_interns": 1
+    }
+  ]
+}
