@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useRef, useEffect } from 'react'
+=======
+import React, { useRef, useEffect, useCallback } from 'react'
+>>>>>>> a28fd3c (fix: replaced invalid Python-style comment with valid JS comment)
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { popIn, floatY } from '../utils/animations.js'
@@ -7,6 +11,13 @@ import gsap from 'gsap'
 const ThreeScene = ({ allocations, filterDomain, onInternSelect }) => {
   const mountRef = useRef(null)
 
+<<<<<<< HEAD
+=======
+  const handleInternSelect = useCallback((data) => {
+    onInternSelect(data)
+  }, [onInternSelect])
+
+>>>>>>> a28fd3c (fix: replaced invalid Python-style comment with valid JS comment)
   useEffect(() => {
     const mount = mountRef.current
     const width = mount.clientWidth
@@ -64,7 +75,11 @@ const ThreeScene = ({ allocations, filterDomain, onInternSelect }) => {
       floatY(mesh, 0.4 + Math.random() * 0.6, 3 + Math.random() * 2)
     })
 
+<<<<<<< HEAD
     # Build interns - NOTE: JS comment char wrong in python triple quotes? Keep as-is
+=======
+    // Build interns
+>>>>>>> a28fd3c (fix: replaced invalid Python-style comment with valid JS comment)
     allocations.interns.forEach((intern, idx) => {
       if (filterDomain !== 'all') {
         const targetProj = allocations.projects.find(p => p.id === intern.assigned_project_id)
@@ -112,7 +127,11 @@ const ThreeScene = ({ allocations, filterDomain, onInternSelect }) => {
       gsap.to(tube.material, { opacity: 0.35, duration: 1.8, yoyo: true, repeat: -1, ease: 'sine.inOut' })
     })
 
+<<<<<<< HEAD
     # Raycasting
+=======
+    // Raycasting
+>>>>>>> a28fd3c (fix: replaced invalid Python-style comment with valid JS comment)
     const raycaster = new THREE.Raycaster()
     const mouse = new THREE.Vector2()
 
@@ -124,7 +143,13 @@ const ThreeScene = ({ allocations, filterDomain, onInternSelect }) => {
       const intersects = raycaster.intersectObjects(clickable)
       if (intersects.length) {
         const obj = intersects[0].object
+<<<<<<< HEAD
         if (obj.userData && obj.userData.type === 'intern') onInternSelect(obj.userData)
+=======
+        if (obj.userData && obj.userData.type === 'intern') {
+          handleInternSelect(obj.userData)
+        }
+>>>>>>> a28fd3c (fix: replaced invalid Python-style comment with valid JS comment)
       }
     }
     window.addEventListener('click', onClick)
@@ -149,9 +174,27 @@ const ThreeScene = ({ allocations, filterDomain, onInternSelect }) => {
       window.removeEventListener('click', onClick)
       window.removeEventListener('resize', onResize)
       mount.removeChild(renderer.domElement)
+<<<<<<< HEAD
       scene.clear()
     }
   }, [allocations, filterDomain, onInternSelect])
+=======
+
+      // Dispose all objects
+      scene.traverse(object => {
+        if (!object.isMesh) return
+        object.geometry?.dispose()
+        if (Array.isArray(object.material)) {
+          object.material.forEach(m => m.dispose())
+        } else {
+          object.material?.dispose()
+        }
+      })
+
+      renderer.dispose()
+    }
+  }, [allocations, filterDomain, handleInternSelect])
+>>>>>>> a28fd3c (fix: replaced invalid Python-style comment with valid JS comment)
 
   return <div ref={mountRef} style={{ width: '100%', height: '100vh' }} />
 }
